@@ -1,0 +1,260 @@
+/* 共通 */
+.site-header {
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* 最初の大きなヘッダー */
+.main-header {
+  background: #F2EBEB;
+  text-align: center;
+  padding: 20px 0;
+  position: relative; /* 固定ではない */
+}
+.main-header .logo {
+  text-decoration: none;
+  display: block;
+  margin: 0 auto 15px auto;
+  height: 100px;
+}
+.main-header .nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+/* スマホ用（画面幅768px以下で適用） */
+@media (max-width: 768px) {
+  .main-header .nav-menu ul {
+    gap: 20px;
+  }
+}
+.main-header .nav-menu a {
+  text-decoration: none;
+  color: #313131;
+  font-size: 1.2rem;
+  font-family: 'Orkney', sans-serif;
+  position: relative;
+  padding-bottom: 6px; /* 下線用に余白 */
+}
+
+/* 下線アニメーション */
+.main-header .nav-menu a.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #7b5e00; /* 下線色 */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+/* ホバー時にアニメーション表示 */
+.main-header .nav-menu a.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* スクロール後の小さい固定ヘッダー */
+.sticky-header {
+  background: #F2EBEB;
+  position: fixed;
+  top: -100px; /* 初期は画面外 */
+  left: 0;
+  width: 100%;
+  padding: 10px 30px;
+  z-index: 1000;
+}
+
+/* 横並び用ラッパー */
+.sticky-header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左右に配置 */
+  max-width: 1200px;  /* 任意、中央に収めたい場合 */
+  margin: 0 auto;
+}
+
+/* ロゴ */
+.sticky-header .logo-small {
+  height: 80px;
+  flex-shrink: 0; /* ロゴが潰れない */
+}
+
+/* ナビゲーション */
+.sticky-header .nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* リンク間の余白 */
+}
+
+.sticky-header .nav-menu a {
+  text-decoration: none;
+  color: #313131;
+  font-size: 1rem;
+  font-family: 'Orkney', sans-serif;
+  font-weight: bold;
+  position: relative;       /* 下線アニメーション用 */
+  padding-bottom: 4px;      /* 下線との余白 */
+}
+
+/* 下線アニメーション */
+.sticky-header .nav-menu a.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #7b5e00;  /* 下線の色 */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+/* ホバー時 */
+.sticky-header .nav-menu a.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+/* スクロール時に表示するクラス */
+.sticky-header.show {
+  top: 0;
+  transition: top 0.3s ease;
+}
+
+/* スマホ用（画面幅768px以下で適用） */
+@media (max-width: 768px) {
+  .sticky-header {
+    padding: 10px 0;
+  }
+
+  .sticky-header .header-inner {
+    max-width: 100%;   /* PC用の中央寄せを無効化 */
+    padding: 0 10px;   /* 必要なら最小限の余白だけ */
+    justify-content: flex-start; /* 左寄せ配置 */
+    gap: 10px;
+  }
+
+  .sticky-header .logo-small {
+    height: 50px;
+    margin-left: 0;   /* 左余白をリセット */
+  }
+
+  .sticky-header .nav-menu ul {
+    gap: 15px;              /* 間隔を狭く */
+  }
+
+  .sticky-header .nav-menu a {
+    font-size: 0.9rem;      /* 文字少し小さく */
+    padding: 8px 0;
+  }
+}
+
+
+/* ▼ 言語切替ボタン */
+.language-selector {
+  position: relative;
+  margin-left: 5px;
+}
+
+#langBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+#langBtn:hover {
+  transform: translateY(-5px);
+}
+
+/* ▼ 言語アイコン画像 */
+.lang-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.lang-icon:hover {
+  transform: rotate(10deg) scale(1.05);
+}
+
+/* ▼ ポップアップ全体 */
+.lang-popup {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: none;
+  padding: 10px;
+  z-index: 100;
+  animation: fadeInLang 0.25s ease forwards;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+/* ▼ 2列レイアウト */
+.lang-popup.grid-layout {
+  display: none; /* JSでflex表示にするため初期は非表示 */
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 6px 12px;
+  width: 400px;
+}
+
+.lang-popup.grid-layout a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 13.5px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.lang-popup.grid-layout a:hover {
+  background: rgba(240, 240, 240, 0.9);
+  transform: translateX(3px);
+}
+
+/* ▼ 国旗アイコン */
+.lang-flag {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+}
+
+/* ▼ スクロールバーを控えめに */
+.lang-popup::-webkit-scrollbar {
+  width: 5px;
+}
+.lang-popup::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 0.3);
+  border-radius: 10px;
+}
+
+/* ▼ モバイルでは1列に自動切替 */
+@media (max-width: 480px) {
+  .lang-popup.grid-layout {
+    grid-template-columns: 1fr;
+    width: 200px;
+  }
+}
+

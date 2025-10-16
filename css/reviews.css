@@ -1,0 +1,140 @@
+/* 口コミ */
+.reviews {
+  text-align: center;
+  margin: 50px auto;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #F1F1F1;
+  padding: 10px;
+}
+
+.reviews-container {
+  text-align: center; /* セクション内のテキストを中央寄せ */
+  margin: 40px auto;  /* 余白を追加（任意） */
+  max-width: 800px;   /* 横幅を制御して中央寄せ */
+}
+
+.reviews-summary {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.rating-score {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.rating-stars {
+  color: #ffa500; /* 星をオレンジ色に */
+  font-size: 1.5rem;
+}
+
+.review-card {
+  max-width: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px auto;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.review-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* 丸アイコンにする */
+  object-fit: cover;
+}
+
+.review-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-badge {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.review-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.review-section {
+  padding-bottom: 20px;
+}
+
+.review-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+
+.review-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.review-button:active {
+  transform: scale(0.98);
+}
+
+.review-button img {
+  height: 22px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .review-date span {
+    display: none;
+  }
+}
+
+.google-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.review-rating {
+  color: #ffa500;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}

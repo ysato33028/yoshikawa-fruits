@@ -1,0 +1,84 @@
+/* フッター */
+.site-footer {
+  background: #F2EBEB;
+  color: #313131;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Orkney', sans-serif;
+}
+
+.site-footer a {
+  color: #313131;
+  text-decoration: underline;
+}
+
+/* LINE公式 */
+.footer-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.footer-line img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+/* Instagram公式 */
+.footer-instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.footer-instagram img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.footer-instagram img:hover {
+  transform: scale(1.4);
+}
+
+/* SNSアイコン */
+.footer-sns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.footer-sns img.sns-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.footer-sns img.sns-icon:hover {
+  transform: scale(1.4);
+}
+
+.footer-sns img.sns-icon-note {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.2s;
+  margin-top: 3px;
+}
+
+.footer-sns img.sns-icon-note:hover {
+  transform: scale(1.4);
+}

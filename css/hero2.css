@@ -1,0 +1,239 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;          /* 100% でなくてOK */
+  /* display: flex;      削除 */
+  /* justify-content: center; 削除 */
+  /* align-items: center;     削除 */
+}
+
+/* ✅ カルーセルを中央寄せ（横）＆高さは画面に応じて可変 */
+.carousel {
+  width: 100%;
+  max-width: 1200px;                /* 以前の最大幅を踏襲 */
+  height: clamp(320px, 60vh, 550px);/* 画面に応じて可変・上限下限を設定 */
+  margin: 0 auto 10px;             /* 中央寄せ（横）＋下余白 */
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+.carousel-item {
+  visibility: visible;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  z-index: 0;
+  transition: 0.6s all linear;
+  background-color: #fff;
+}
+
+.carousel-item__info {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  width: 40%;
+}
+
+.carousel-item__image {
+  width: 60%;
+  height: 100%;
+  order: 2;
+  align-self: flex-end;
+  flex-basis: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transform: translateX(100%);
+  transition: 0.6s all ease-in-out;
+}
+
+/* 各画像 */
+.carousel-item--1 .carousel-item__image {
+  background-image: url('../icon/apple.jpg');
+}
+.carousel-item--2 .carousel-item__image {
+  background-image: url('../icon/2_prune.jpg');
+}
+.carousel-item--3 .carousel-item__image {
+  background-image: url('../icon/3_cherry.jpg');
+}
+.carousel-item--4 .carousel-item__image {
+  background-image: url('../icon/4_sweetcorn.jpg');
+}
+
+/* テキスト */
+.carousel-item__subtitle {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #C5A46D;
+  font-weight: 700;
+  transform: translateY(25%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s all ease-in-out;
+}
+.carousel-item__title {
+  margin: 15px 0 0 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #2C2C2C;
+  transform: translateY(25%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s all ease-in-out;
+}
+.carousel-item__description {
+  transform: translateY(25%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.6s all ease-in-out;
+  margin-top: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  color: #7e7e7e;
+  line-height: 22px;
+  margin-bottom: 35px;
+}
+
+.carousel-item__btn {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #40B3A2;
+  min-width: 200px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-sizing: border-box;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+.carousel-item__btn:hover {
+  opacity: .95;
+}
+.carousel-item__btn .animation {
+  border-radius: 100%;
+  animation: ripple 0.6s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+  }
+}
+
+/* ナビ矢印 */
+.carousel__nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: #fff;
+}
+.carousel__icon {
+  width: 16px;
+  fill: #5d5d5d;
+}
+.carousel__arrow {
+  cursor: pointer;
+  display: inline-block;
+  padding: 11px 15px;
+  position: relative;
+}
+.carousel__arrow:nth-child(1):after {
+  content: '';
+  right: -3px;
+  position: absolute;
+  width: 1px;
+  background-color: #b0b0b0;
+  height: 14px;
+  top: 50%;
+  margin-top: -7px;
+}
+
+/* アクティブ時 */
+.active {
+  z-index: 1;
+  display: flex;
+  visibility: visible;
+}
+.active .carousel-item__subtitle,
+.active .carousel-item__title,
+.active .carousel-item__description,
+.active .carousel-item__btn {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: 0.6s all ease-in-out;
+}
+.active .carousel-item__image {
+  transform: translateX(0);
+  transition: 0.6s all ease-in-out;
+}
+
+/* スマホ用（幅768px以下） */
+@media (max-width: 768px) {
+  .carousel-item {
+    flex-direction: column;       /* 縦並び */
+    justify-content: flex-start;  /* 上から配置 */
+    text-align: center;           /* 中央寄せ */
+  }
+
+  .carousel-item__image {
+    order: 1;          /* 画像を先頭に */
+    width: 100%;       /* 全幅 */
+    height: 200px;     /* 高さを縮小（必要に応じて調整） */
+    transform: translateX(0) !important; /* 横スライド初期値を無効化 */
+  }
+
+  .carousel-item__info {
+    order: 2;          /* テキストを後に */
+    width: 100%;       /* 全幅 */
+    padding: 20px;     /* 余白をリセット */
+    height: auto;      /* 高さを自動 */
+  }
+
+  .carousel-item__title {
+    font-size: 28px;   /* タイトル小さめに */
+  }
+
+  .carousel-item__description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+
+  .carousel-item__btn {
+    min-width: unset; /* ボタン幅を自動に */
+    width: auto;
+    padding: 12px 18px;
+    font-size: 12px;
+  }
+}

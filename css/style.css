@@ -1,0 +1,78 @@
+body {
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ページ内リンク */
+#products {
+  scroll-margin-top: 80px; /* 固定ヘッダーの高さに合わせる */
+}
+
+#reviews {
+  scroll-margin-top: 80px; /* 固定ヘッダーの高さに合わせる */
+}
+
+#contact {
+  scroll-margin-top: 80px; /* 固定ヘッダーの高さに合わせる */
+}
+
+#products {
+  scroll-margin-top: 80px; /* 固定ヘッダーの高さに合わせる */
+}
+
+#calendar {
+  scroll-margin-top: 120px; /* 固定ヘッダーの高さに合わせる */
+}
+
+/* MAP */
+.map {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px; /* 最大幅を制御 */
+  
+}
+
+.map h2 {
+  font-size: 28px;
+  color: #111;
+}
+.map-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 16/9; /* 縦横比を固定 */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+
+.shop-info {
+  width: 95%;
+  border-collapse: collapse;
+  margin-top: 1em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.shop-info th,
+.shop-info td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.shop-info th {
+  background-color: #f9f9f9;
+  width: 25%;
+  white-space: nowrap;
+}

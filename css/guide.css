@@ -1,0 +1,55 @@
+/* FAQ・お問い合わせ・ご利用ガイド セクション全体 */
+.guide-section {
+  padding: 3rem 1.5rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.guide-section .content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* セクション見出し */
+.guide-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #890000;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #890000;
+  padding-left: 0.75rem;
+}
+
+/* ご利用ガイド */
+.guide-section h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.guide-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.shop-info {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.shop-info th,
+.shop-info td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.shop-info th {
+  background-color: #f9f9f9;
+  width: 25%;
+  white-space: nowrap;
+}

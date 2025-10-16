@@ -1,0 +1,55 @@
+.limited-fruits {
+  text-align: center;
+  padding: 60px 20px;
+  background: #FEF3EA; /* 柔らかい背景色 */
+  color: #333;
+}
+
+.limited-fruits h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.limited-fruits .intro {
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.fruits-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* カード間の余白 */
+  flex-wrap: wrap;
+}
+
+.fruit-card {
+  max-width: 220px;
+  text-align: center;
+}
+
+.fruit-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%; /* 円形にする */
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.fruit-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.fruit-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.limited-fruits .note {
+  margin-top: 40px;
+  font-size: 0.85rem;
+  color: #777;
+}

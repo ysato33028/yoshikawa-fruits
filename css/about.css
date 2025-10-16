@@ -1,0 +1,352 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+}
+
+/* セッション */
+.about-theme {
+  position: relative;
+  margin: 0 auto;
+  padding: 120px 20px; /* hero風に高さ確保 */
+  background: #FFF;
+  color: #313131;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 中身（説明文） */
+.about-theme .content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;                 /* 横並びにする */
+  align-items: center;           /* 垂直中央揃え */
+  justify-content: space-between;
+  gap: 40px;                     /* 文字と画像の間隔 */
+  text-align: left;              /* 左寄せ */
+}
+
+/* テキスト部分 */
+.about-theme .text-block {
+  flex: 1;
+}
+
+.about-theme .text-block h2 {
+  color: #313131;
+  font-size: 38px;
+}
+
+.about-theme .text-block span {
+  color: #FFBD59;
+  font-size: 38px;
+}
+
+/* 画像部分 */
+.about-theme .about-image {
+  flex: 1;
+  text-align: right;
+}
+.about-theme .about-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* 地図セッション */
+.about-photo {
+  position: relative;
+  margin: 0 auto;
+  padding: 120px 20px; /* hero風に高さ確保 */
+  background: url('../icon/hero5.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ぼんやり暗くするオーバーレイ */
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55); /* 半透明の黒で暗く */
+  backdrop-filter: blur(6px);      /* 背景をぼかす */
+  -webkit-backdrop-filter: blur(6px); /* Safari対応 */
+  z-index: 0;
+}
+
+/* 中身（説明文や地図） */
+.about-photo .content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;                 /* 横並びにする */
+  align-items: center;           /* 垂直中央揃え */
+  justify-content: space-between;
+  gap: 40px;                     /* 文字と画像の間隔 */
+  text-align: left;              /* 左寄せ */
+}
+
+/* テキスト部分 */
+.about-photo .text-block {
+  flex: 1;
+}
+
+.about-photo .text-block h2 {
+  color: #fff;
+  font-size: 38px;
+}
+
+/* 画像部分 */
+.about-photo .about-image {
+  flex: 1;
+  text-align: right;
+}
+.about-photo .about-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+.apple-steps {
+  background: #FFF;
+  padding: 50px;
+}
+
+.apple-steps .content {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.apple-steps h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4列 */
+  gap: 30px;
+}
+
+.step-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.step-img {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.step-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.step-card span {
+  color: #FFBD59;
+  
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.fruit-intro {
+  background: #FEF3EA;
+  padding: 50px;
+}
+
+.fruit-intro .content {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.fruit-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #313131;
+  font-family: 'Playfair Display', serif;
+}
+
+.fruit-intro .intro-text {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #555;
+}
+
+.fruit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.fruit-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fruit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.fruit-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* 丸型にする */
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #4ACBB8; /* アクセント色 */
+}
+
+.fruit-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.fruit-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* セッション */
+.about-theme2 {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.about-theme2 h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #313131;
+  font-family: 'Playfair Display', serif;
+}
+
+/* 中身（説明文） */
+.about-theme2 .content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;                 /* 横並びにする */
+  align-items: center;           /* 垂直中央揃え */
+  justify-content: space-between;
+  gap: 40px;                     /* 文字と画像の間隔 */
+  text-align: left;              /* 左寄せ */
+  margin-bottom: 20px;
+}
+
+/* テキスト部分 */
+.about-theme2 .text-block {
+  flex: 1;
+}
+
+.about-theme2 .text-block span {
+  color: #FFBD59;
+  font-size: 38px;
+}
+
+/* 画像部分 */
+.about-theme2 .about-image {
+  flex: 1;
+  text-align: right;
+}
+.about-theme2 .about-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+@media (max-width: 768px) {
+  .about-theme .text-block span {
+    color: #FFBD59;
+    font-size: 28px;
+  }
+
+  .about-theme {
+    padding: 5px 20px; /* hero風に高さ確保 */
+  }
+
+  /* 地図セッション */
+  .about-photo {
+    padding: 20px 20px; /* hero風に高さ確保 */
+  }
+
+  .about-theme2 {
+    margin: 5px auto;
+  }
+
+  /* 共通: about セクションを縦並びに */
+  .about-theme .content,
+  .about-photo .content,
+  .about-theme2 .content {
+    flex-direction: column;   /* 縦並び */
+    gap: 20px;
+  }
+
+  .about-theme .about-image,
+  .about-photo .about-image,
+  .about-theme2 .about-image {
+    text-align: center;       /* 画像も中央 */
+  }
+
+  .about-theme .about-image img,
+  .about-photo .about-image img,
+  .about-theme2 .about-image img {
+    max-width: 90%;           /* 画面幅に合わせる */
+    height: auto;
+  }
+
+  .about-theme .text-block h2,
+  .about-photo .text-block h2,
+  .about-theme2 .text-block h2 {
+    text-align: center;    
+    font-size: 1.5rem;        /* スマホ向けに文字サイズ縮小 */
+  }
+
+  .about-theme2 h2 {
+    text-align: center;       /* スマホ向けに文字サイズ縮小 */
+  }
+
+  /* 🍎 Apple Steps: 1列レイアウト */
+  .steps-grid {
+    grid-template-columns: 1fr;  /* 1列 */
+    gap: 20px;
+  }
+
+  .step-card {
+    max-width: 100%;
+  }
+
+  .step-img {
+    max-width: 100%;           /* カード幅に合わせる */
+    height: auto;              /* 高さ自動調整 */
+  }
+}

@@ -1,0 +1,21 @@
+/* PCでは非表示 */
+.scroll-hint {
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.scroll-hint img {
+  width: 30px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+/* スマホ用（768px以下で表示） */
+@media (max-width: 768px) {
+  .scroll-hint {
+    display: block;
+  }
+}

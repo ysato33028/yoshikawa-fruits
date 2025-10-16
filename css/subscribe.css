@@ -1,0 +1,442 @@
+/* 地図セッション */
+.subscribe-photo {
+  position: relative;
+  margin: 0 auto;
+  padding: 120px 20px; /* hero風に高さ確保 */
+  background: url('../icon/sub_cherry.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ぼんやり暗くするオーバーレイ */
+.subscribe-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15); /* 半透明の黒で暗く */
+  backdrop-filter: blur(2px);      /* 背景をぼかす */
+  -webkit-backdrop-filter: blur(2px); /* Safari対応 */
+  z-index: 0;
+}
+
+/* 中身（説明文や地図） */
+.subscribe-photo .content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;                 /* 横並びにする */
+  align-items: center;           /* 垂直中央揃え */
+  justify-content: space-between;
+  gap: 40px;                     /* 文字と画像の間隔 */
+  text-align: left;              /* 左寄せ */
+}
+
+/* テキスト部分 */
+.subscribe-photo .text-block {
+  flex: 1;
+  font-family: 'Playfair Display', serif;
+}
+
+.subscribe-photo .text-block h2 {
+  color: #fff;
+  font-size: 38px;
+}
+
+/* 画像部分 */
+.subscribe-photo .subscribe-image {
+  flex: 1;
+  text-align: right;
+}
+.subscribe-photo .subscribe-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* セッション */
+.subscribe-theme {
+  position: relative;
+  margin: 0 auto;
+  padding: 120px 20px; /* hero風に高さ確保 */
+  background: #FFF;
+  color: #313131;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* 中身（説明文） */
+.subscribe-theme .content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;                 /* 横並びにする */
+  align-items: center;           /* 垂直中央揃え */
+  justify-content: space-between;
+  gap: 40px;                     /* 文字と画像の間隔 */
+  text-align: left;              /* 左寄せ */
+}
+
+/* テキスト部分 */
+.subscribe-theme .text-block {
+  flex: 1;
+}
+
+.subscribe-theme .text-block h2 {
+  color: #313131;
+  font-size: 38px;
+  font-family: 'Playfair Display', serif;
+}
+
+.subscribe-theme .text-block span {
+  color: #FFBD59;
+  font-size: 38px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* 画像部分 */
+.subscribe-theme .subscribe-image {
+  flex: 1;
+  text-align: right;
+}
+.subscribe-theme .subscribe-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* 特定のボタンだけに適用 */
+#subscribe-btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  width: 15rem;
+  height: auto;
+}
+
+#subscribe-btn .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+
+#subscribe-btn .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+#subscribe-btn .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+#subscribe-btn .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+#subscribe-btn .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+#subscribe-btn:hover .circle {
+  width: 100%;
+}
+
+#subscribe-btn:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+#subscribe-btn:hover .button-text {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .subscribe-theme .text-block span {
+    color: #FFBD59;
+    font-size: 28px;
+  }
+
+  .subscribe-theme {
+    padding: 5px 20px; /* hero風に高さ確保 */
+  }
+
+  /* 共通: about セクションを縦並びに */
+  .subscribe-theme .content {
+    flex-direction: column;   /* 縦並び */
+    gap: 20px;
+  }
+
+  .subscribe-theme .about-image {
+    text-align: center;       /* 画像も中央 */
+  }
+
+  .subscribe-theme .about-image img {
+    max-width: 90%;           /* 画面幅に合わせる */
+    height: auto;
+  }
+
+  .subscribe-theme .text-block h2 {
+    text-align: center;    
+    font-size: 1.5rem;        /* スマホ向けに文字サイズ縮小 */
+  }
+
+  #subscribe-btn {
+    display: block;
+    margin: 1.5rem auto; /* 中央配置 */
+    text-align: center;
+    color: #FFF;
+    background: #282936;
+    width: 70%;
+    border-radius: 25px;
+  }
+
+  #subscribe-btn .button-text {
+  	color: #FFF;
+  }
+}
+
+/* 定期便セクション全体 */
+.subscribe-plans {
+  padding: 60px 20px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.subscribe-plans h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+.subscribe-plans h2 span {
+  color: #890000; /* ブランドカラー */
+}
+
+.subscribe-plans .intro {
+  font-size: 1rem;
+  margin-bottom: 40px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* プラン比較表 */
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 1rem;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.plan-table thead {
+  background: #890000;
+  color: #fff;
+}
+
+.plan-table th,
+.plan-table td {
+  padding: 16px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.plan-table th {
+  font-size: 1.1rem;
+}
+
+.plan-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* 申込みボタン */
+.plan-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: #FFBD59;
+  color: #313131;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.plan-btn:hover {
+  background: #FFD79A;
+  transform: translateY(-2px);
+}
+
+/* デフォルトはPC表示 */
+.sp-text {
+  display: none;
+}
+
+.pc-text {
+  display: inline;
+}
+
+/* スマホ時（768px以下）は切り替え */
+@media (max-width: 768px) {
+  .pc-text {
+    display: none;
+  }
+  .sp-text {
+    display: inline;
+  }
+}
+
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .plan-table th,
+  .plan-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .subscribe-plans h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* FAQ・お問い合わせ・ご利用ガイド セクション全体 */
+.faq-section,
+.contact-info,
+.guide-section {
+  padding: 3rem 1.5rem;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.faq-section .content,
+.contact-info .content,
+.guide-section .content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* セクション見出し */
+.faq-section h2,
+.contact-info h2,
+.guide-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #890000;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #890000;
+  padding-left: 0.75rem;
+}
+
+/* FAQの個別項目 */
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.faq-item p {
+  margin: 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* お問い合わせエリア */
+.contact-info p {
+  line-height: 1.8;
+  color: #444;
+}
+
+.contact-info a {
+  color: #890000;
+  text-decoration: underline;
+}
+
+/* ご利用ガイド */
+.guide-section h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.guide-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .faq-section,
+  .contact-info,
+  .guide-section {
+    padding: 2rem 1rem;
+  }
+
+  .faq-section h2,
+  .contact-info h2,
+  .guide-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-item h3,
+  .guide-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
