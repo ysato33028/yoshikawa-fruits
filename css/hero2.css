@@ -57,16 +57,16 @@ html, body {
 
 /* 各画像 */
 .carousel-item--1 .carousel-item__image {
-  background-image: url('../icon/apple.jpg');
+  background-image: url('../icon/apple2.JPG');
 }
 .carousel-item--2 .carousel-item__image {
-  background-image: url('../icon/2_prune.jpg');
+  background-image: url('../icon/prune.JPG');
 }
 .carousel-item--3 .carousel-item__image {
   background-image: url('../icon/3_cherry.jpg');
 }
 .carousel-item--4 .carousel-item__image {
-  background-image: url('../icon/4_sweetcorn.jpg');
+  background-image: url('../icon/5_lafrance.jpg');
 }
 
 /* テキスト */
